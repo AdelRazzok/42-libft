@@ -10,7 +10,6 @@ La programmation en C est une activité très laborieuse dès lors que l’on n�
 Prenez le temps d’enrichir votre libft tout au long de l’année. Cependant, pour chacun de vos projets futurs, veillez toujours à vérifier quelles sont les fonctions autorisées !
 
 <br>
-<br>
 
 ## Chapitre II
 ## Règles communes
@@ -38,7 +37,6 @@ _bonus.{c/h}. L’évaluation de la partie obligatoire et de la partie bonus son
 
 - Vous devez rendre votre travail sur le git qui vous est assigné. Seul le travail déposé sur git sera évalué. Si Deepthought doit corriger votre travail, cela sera fait à la fin des peer-evaluations. Si une erreur se produit pendant l’évaluation Deepthought, celle-ci s’arrête.
 
-<br>
 <br>
 
 ## Chapitre III
@@ -265,6 +263,8 @@ write
 Description Écrit l’entier ’n’ sur le descripteur de fichier
 donné.
 
+<br>
+
 ## Chapitre IV
 ## Partie bonus
 
@@ -282,9 +282,9 @@ déclaration est à ajouter à votre fichier libft.h :
 ``` C
 typedef struct s_list
 {
-	void			*content;
+	void	*content;
 	struct s_list	*next;
-}					t_list;
+}	t_list;
 ```
 
 Les membres de la structure t_list sont les suivants :
