@@ -1,6 +1,7 @@
 #ifndef FT_LIBFT_H
 
 #include <stdio.h>
+#include <stdlib.h>
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
