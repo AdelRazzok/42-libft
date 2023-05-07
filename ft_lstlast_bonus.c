@@ -1,13 +1,22 @@
-#include "libft_bonus.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: arazzok <arazzok@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/07 12:32:16 by arazzok           #+#    #+#             */
+/*   Updated: 2023/05/07 16:02:36 by arazzok          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	t_list	*el;
-
 	if (!lst)
 		return (NULL);
-	el = lst;
-	while (el->next != NULL)
-		el = el->next;
-	return (el);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }

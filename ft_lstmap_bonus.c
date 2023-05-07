@@ -1,4 +1,16 @@
-#include "libft_bonus.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: arazzok <arazzok@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/07 12:32:48 by arazzok           #+#    #+#             */
+/*   Updated: 2023/05/07 13:28:27 by arazzok          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
 
 static void	ft_lstmap_clear(t_list *lst, void (*del)(void *))
 {
@@ -12,7 +24,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_list;
 	t_list	*new_elem;
-	t_list	*curr;
 
 	if (!lst || !f || !del)
 		return (NULL);
