@@ -2,8 +2,9 @@ NAME      = libft.a
 INCLUDES  = include/
 SRC_DIR   = src/
 OBJ_DIR   = obj/
+
 CC        = gcc
-CC_FLAGS  = -Wall -Werror -Wextra -I
+C_FLAGS  = -Wall -Werror -Wextra -I
 AR        = ar rcs
 
 FTIS_DIR  = ft_is/
@@ -54,7 +55,7 @@ $(NAME):		$(OBJ)
 
 $(OBJ_DIR)%.o : $(SRC_DIR)%.c | $(OBJ_CACHE)
 					@echo "Compiling $<"
-					@$(CC) $(CC_FLAGS) $(INCLUDES) -c $< -o $@
+					@$(CC) $(C_FLAGS) $(INCLUDES) -c $< -o $@
 
 $(OBJ_CACHE):
 					@mkdir -p $(OBJ_DIR)
