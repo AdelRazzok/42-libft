@@ -6,7 +6,7 @@
 /*   By: arazzok <arazzok@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 16:37:45 by arazzok           #+#    #+#             */
-/*   Updated: 2023/05/07 13:26:46 by arazzok          ###   ########.fr       */
+/*   Updated: 2023/10/14 15:18:06 by arazzok          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,22 @@
 
 # define LIBFT_H
 
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 5
+# endif
+
+# ifndef OPEN_MAX
+#  define OPEN_MAX 2048
+# endif
+
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdarg.h>
+# include <stdint.h>
+# include <sys/types.h>
+# include <sys/stat.h>
+# include <fcntl.h>
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -68,5 +81,20 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+int		ft_printf(const char *format, ...);
+int		ft_handle_format(va_list *args, const char format);
+int		ft_print_char(int c);
+int		ft_print_str(char *str);
+int		ft_print_ptr(uintptr_t ptr);
+int		ft_print_nbr(int nbr);
+int		ft_print_uint(unsigned int nbr);
+int		ft_print_hexa(unsigned int nb, const char format);
+
+char	*get_next_line(int fd);
+char	*read_and_stock(int fd, char *stock);
+char	*extract_line(char *stock);
+char	*clear_stock(char *stock);
+int		is_newline(char *str);
 
 #endif

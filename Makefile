@@ -24,12 +24,19 @@ FTSTR     = ft_split ft_strchr ft_strdup ft_striteri ft_strjoin ft_strlcat ft_st
 FTLST_DIR = ft_lst/
 FTLST     = ft_lstadd_back ft_lstadd_front ft_lstclear ft_lstdelone ft_lstiter ft_lstlast ft_lstmap ft_lstnew ft_lstsize
 
+FTPTF_DIR = ft_printf/
+FTPTF     = ft_print_char ft_print_hexa ft_print_nbr ft_print_ptr ft_print_str ft_print_uint ft_printf
+
+FTGNL_DIR = ft_gnl/
+FTGNL     = get_next_line.c get_next_line_utils.c
+
 SRC_FILES+=$(addprefix $(FTIS_DIR),$(FTIS))
 SRC_FILES+=$(addprefix $(FTMEM_DIR),$(FTMEM))
 SRC_FILES+=$(addprefix $(FTPUT_DIR),$(FTPUT))
 SRC_FILES+=$(addprefix $(FTTO_DIR),$(FTTO))
 SRC_FILES+=$(addprefix $(FTSTR_DIR),$(FTSTR))
 SRC_FILES+=$(addprefix $(FTLST_DIR),$(FTLST))
+SRC_FILES+=$(addprefix $(FTPTF_DIR),$(FTPTF))
 
 SRC       = $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJ       = $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
@@ -57,6 +64,7 @@ $(OBJ_CACHE):
 					@mkdir -p $(OBJ_DIR)$(FTTO_DIR)
 					@mkdir -p $(OBJ_DIR)$(FTSTR_DIR)
 					@mkdir -p $(OBJ_DIR)$(FTLST_DIR)
+					@mkdir -p $(OBJ_DIR)$(FTPTF_DIR)
 
 clean:
 					@rm -rf $(OBJ_DIR)
